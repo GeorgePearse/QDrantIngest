@@ -1,0 +1,35 @@
+[build-system]
+requires = ["setuptools>=42", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "qdrantingest"
+version = "0.1.0"
+description = "Convert COCO annotations to QDrant vector database with Jina AI embeddings"
+readme = "README.md"
+authors = [
+    {name = "QDrantIngest Developers"}
+]
+requires-python = ">=3.8"
+license = {text = "MIT"}
+dependencies = [
+    "numpy>=1.20.0",
+    "pillow>=9.0.0",
+    "qdrant-client>=1.1.1", 
+    "tqdm>=4.62.0",
+    "jinaai>=0.4.0",
+]
+
+[project.scripts]
+qdrantingest = "qdrantingest.main:main"
+
+[tool.setuptools]
+packages = ["qdrantingest"]
+
+[tool.isort]
+profile = "black"
+line_length = 88
+
+[tool.black]
+line-length = 88
+target-version = ["py38"]
